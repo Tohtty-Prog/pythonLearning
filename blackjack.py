@@ -58,29 +58,32 @@ def hit_stand(p1,p2, deck):
         p2_total = calc_hands(p2)
     return p1_total, p2_total
 
-deck = makeDeck()
+def main():
+    deck = makeDeck()
 
-p1_hand,p2_hand = hands(deck=deck)
+    p1_hand,p2_hand = hands(deck=deck)
 
-p1_total = calc_hands(p1_hand)
-p2_total = calc_hands(p2_hand)
+    p1_total = calc_hands(p1_hand)
+    p2_total = calc_hands(p2_hand)
 
-print(f"Cards:{p1_hand} Total:{p1_total}")
-print(f"Cards:{p2_hand} Total:{p2_total}")
+    print(f"Cards:{p1_hand} Total:{p1_total}")
+    print(f"Cards:{p2_hand} Total:{p2_total}")
 
-p1_total,p2_total = hit_stand(p1=p1_hand,p2=p2_hand,deck=deck)
+    p1_total,p2_total = hit_stand(p1=p1_hand,p2=p2_hand,deck=deck)
 
-print(f"\nFinal Player hand: {p1_hand} Total: {p1_total}")
-print(f"Final Dealer hand: {p2_hand} Total: {p2_total}")
+    print(f"\nFinal Player hand: {p1_hand} Total: {p1_total}")
+    print(f"Final Dealer hand: {p2_hand} Total: {p2_total}")
 
-if p1_total > 21:
-    print("Player busts! Dealer wins.")
-elif p2_total > 21:
-    print("Dealer busts! Player wins.")
-elif p1_total > p2_total:
-    print("Player wins!")
-elif p2_total > p1_total:
-    print("Dealer wins!")
-else:
-    print("It's a tie!")
+    if p1_total > 21:
+        print("Player busts! Dealer wins.")
+    elif p2_total > 21:
+        print("Dealer busts! Player wins.")
+    elif p1_total > p2_total:
+        print("Player wins!")
+    elif p2_total > p1_total:
+        print("Dealer wins!")
+    else:
+        print("It's a tie!")
 
+if __name__ == "__main__":
+    main()
