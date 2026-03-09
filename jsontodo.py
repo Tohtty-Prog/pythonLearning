@@ -39,7 +39,7 @@ def show_tasks():
         return
     
     for i,task in enumerate(data["tasks"], start=1):
-        print(f"{i}. task: {task}")
+        print(f"{i}. {task: {'task'}}")
 
 def main():
     check_file()
