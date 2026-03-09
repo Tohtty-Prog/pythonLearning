@@ -6,8 +6,6 @@ def main():
     if not os.path.exists("users.json"):
         with open("users.json", 'w') as f:
             json.dump({"users": []}, f, indent=4)
-    else:
-        pass
 
 
     while True:
