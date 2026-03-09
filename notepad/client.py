@@ -1,6 +1,7 @@
 import requests
 
-BASE_URL = "http://127.0.0.1:8000"
+#BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "http://131.163.89.76:8000"
 
 
 def add_note():
