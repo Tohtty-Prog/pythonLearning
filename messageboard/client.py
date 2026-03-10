@@ -8,7 +8,7 @@ def get_messages():
         messages = response.json()
         print("Viestit: ")
         for message in messages:
-            print(f"{message['id']}: {message['username']} -> {message["text"]}")
+            print(f"{message['id']}: {message['username']} -> {message['text']}")
     else:
         print(f"virhe viestien saannissa", response.status_code, response.text)
 
