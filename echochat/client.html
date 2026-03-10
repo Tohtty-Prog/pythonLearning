@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WebSocket test</title>
+</head>
+<body>
+
+<h2>WebSocket test</h2>
+
+<input id="message" placeholder="Kirjoita numero">
+<button onclick="sendMessage()">Send</button>
+
+<p id="response"></p>
+
+<script>
+
+const ws = new WebSocket("ws://127.0.0.1:8000/ws")
+
+ws.onmessage = function(event) {
+    document.getElementById("response").textContent = "Server vastasi: " + event.data
+}
+
+function sendMessage() {
+    const msg = document.getElementById("message").value
+    ws.send(msg)
+}
+
+</script>
+
+</body>
+</html>
